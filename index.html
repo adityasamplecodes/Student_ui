@@ -1,75 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="https://www.endava.com/hubfs/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Summary Converter</title>
-    <link rel="stylesheet" href="/src/index.css">
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#317EFB" />
+    <meta name="description" content="Student Marks Upload POC with React + MS Access Backend" />
+    <title>Student Marks Upload</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <header class="header">
-      <div class="logo">
-        <h1>NeoSapiens <img src="https://www.endava.com/hubfs/favicon.ico" alt="NeoSapiens Logo" class="logo-img" /></h1>
-      </div>
-
-      <nav class="header-nav">
-        <a href="#" onclick="openPopup('aboutTeamPopup')">About Team</a>
-        <a href="#" onclick="openPopup('aboutSolutionPopup')">About Solution</a>
-      </nav>
-    </header>
-
-    <div id="aboutSolutionPopup" class="popup-main">
-      <div class="popup-content">
-        <button class="close-button" onclick="closePopup('aboutSolutionPopup')">×</button>
-        <h2>About Solution</h2>
-        <p>The PDF Summarization System is a scalable, cost-effective pipeline that combines extractive and abstractive summarization techniques to efficiently process PDF documents. The system extracts text using PyMuPDF, followed by spaCy for extractive summarization, reducing the document size by 70-90% without any external API or token costs. A low-cost LLM API (such as OpenAI’s ChatGPT4o) is then used for abstractive summarization, generating high-quality summaries at minimal cost. Token analysis is performed to track and optimize API usage, and summaries are stored in a SQL database for future retrieval. The solution minimizes LLM token usage, accelerates document processing with parallel workers, and routes only large or critical documents to more powerful models, ensuring a fast, efficient workflow.</p>
-      </div>
-    </div>
-
-    <div id="aboutTeamPopup" class="popup-main">
-      <div class="popup-content">
-        <button class="close-button" onclick="closePopup('aboutTeamPopup')">×</button>
-        <h2>About the Team</h2>
-        <p>Our team consists of highly skilled professionals dedicated to delivering innovative solutions to our clients:</p>
-        <ul>
-          <li><strong>Prashant Yadav:</strong> Mentor and Architect, providing strategic direction and architectural guidance to ensure that the system is scalable, reliable, and aligned with industry best practices.</li>
-          <li><strong>Gopal Kumar Thakur:</strong> Development Lead, managing the development process and guiding the team in using AWS and Dotnet technologies effectively.</li>
-          <li><strong>Sumit Kumar:</strong> Data Consultant, with expertise in MySQL, overseeing data management, database optimization, and ensuring seamless data flow across the system.</li>
-          <li><strong>Dileep Kumar Gupta:</strong> Senior Engineer, leading technical implementations and ensuring efficient integration of various technologies.</li>
-          <li><strong>Aditya Raj:</strong> Developer, specializing in React.js and Node.js. Aditya is responsible for building the front-end and back-end components of the system.</li>
-        </ul>
-        <p>Together, the team works with Dotnet, MySQL, Node.js, AWS, and React.js to build cutting-edge solutions.</p>
-      </div>
-    </div>
-
+    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
 
-    <footer class="footer">
-      <p>&copy; 2025 Summary Converter. All rights reserved.</p>
-    </footer>
+    <!--This is required in Vite -->
     <script type="module" src="/src/main.jsx"></script>
-    <script>
-      function openPopup(popupId) {
-        const popup = document.getElementById(popupId);
-        if (popup) {
-          popup.style.display = 'flex'; 
-        }
-      }
-
-      function closePopup(popupId) {
-        const popup = document.getElementById(popupId);
-        if (popup) {
-          popup.style.display = 'none';
-        }
-      }
-
-      window.onload = () => {
-        const popups = document.querySelectorAll('.popup-overlay');
-        popups.forEach(popup => {
-          popup.style.display = 'none';
-        });
-      }
-    </script>
   </body>
 </html>
