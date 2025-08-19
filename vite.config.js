@@ -4,4 +4,12 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  server: {
+    port: 5173,
+    proxy: {
+      "/students": "http://localhost:5000",
+      "/upload": "http://localhost:5000",
+      "/marksheets": "http://localhost:5000",
+    },
+  },
 })
